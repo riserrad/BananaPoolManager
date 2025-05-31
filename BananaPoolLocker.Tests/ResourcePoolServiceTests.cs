@@ -3,7 +3,7 @@ using BananaPoolLocker.Services;
 
 namespace BananaPoolLocker.Tests;
 
-public class UnitTest1
+public class ResourcePoolServiceTests
 {
     private const string ConnectionString = "UseDevelopmentStorage=true";
     private const string TableName = "ResourcePoolTestTable";

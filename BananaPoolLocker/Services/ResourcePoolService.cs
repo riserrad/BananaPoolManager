@@ -30,7 +30,7 @@ public class ResourcePoolService
 
         return await ToListAsync<ResourceEntity>(resources);
     }
-    
+
     public async Task<ResourceEntity?> TryAcquireResourceAsync(string rowKey)
     {
         try
@@ -51,6 +51,11 @@ public class ResourcePoolService
         catch (RequestFailedException ex) when (ex.Status == 404)
         {
             return null; // Resource not found
+        }
+        catch (RequestFailedException ex) when (ex.Status == 412)
+        {
+            // This means the resource was updated by another process, so we cannot acquire it
+            return null;
         }
     }
 
