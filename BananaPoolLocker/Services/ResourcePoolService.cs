@@ -8,6 +8,8 @@ namespace BananaPoolLocker.Services;
 public class ResourcePoolService
 {
     public readonly TableClient _tableClient;
+    public readonly int MinimumResources = 10; // Minimum number of resources to maintain in the pool
+    public readonly int Buffer = 2; // Optional buffer to ensure we have enough resources
 
     public ResourcePoolService(string connectionString, string tableName)
     {
@@ -41,6 +43,7 @@ public class ResourcePoolService
                 // the ETag will not match, and the update will fail with a 412 Precondition Failed error.
                 // This ensures that only one process can acquire the resource at a time.
                 await _tableClient.UpdateEntityAsync(resource.Value, resource.Value.ETag, TableUpdateMode.Replace);
+                await RefillPoolAsync(); // Check and refill the pool if needed
                 return resource.Value;
             }
             return null; // Resource is not available
@@ -55,6 +58,24 @@ public class ResourcePoolService
     {
         resource.PartitionKey = "ResourcePool"; // Ensure the partition key is set to the correct value
         await _tableClient.AddEntityAsync(resource);
+    }
+
+    public async Task RefillPoolAsync()
+    {
+        var availableResources = await GetAvailableResourcesAsync();
+        var availableResourcesCount = availableResources.Count;
+        if (availableResourcesCount < MinimumResources)
+        {
+            var refillCount = MinimumResources - availableResourcesCount + Buffer;
+
+            // Logic to refill the pool, e.g., adding new resources
+            // This is a placeholder; implement your own logic here
+            for (int i = 0; i < refillCount; i++)
+            {
+                var newResource = new ResourceEntity();
+                await AddResourceAsync(newResource);
+            }
+        }
     }
 
     // There is no ToListAsync for AsyncPageable<T> in Azure.Data.Tables.

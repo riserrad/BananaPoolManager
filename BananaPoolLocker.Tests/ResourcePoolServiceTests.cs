@@ -55,4 +55,22 @@ public class UnitTest1
         Assert.Equal(1, results.Count(r => r != null));
         Assert.Equal(ResourceEntityState.InUse, results.FirstOrDefault(r => r != null)?.Status);
     }
+
+    [Fact]
+    public async Task Should_Refill_Resources_If_Below_Threshold()
+    {
+        await _resourcePoolService.RefillPoolAsync();
+
+        var availableResources = await _resourcePoolService.GetAvailableResourcesAsync();
+
+        var countOfResourcesToAllocate = availableResources.Count - _resourcePoolService.MinimumResources + 1;
+        for (int i = 0; i < countOfResourcesToAllocate; i++)
+        {
+            var resource = availableResources[i];
+            await _resourcePoolService.TryAcquireResourceAsync(resource.RowKey);
+        }
+
+        availableResources = await _resourcePoolService.GetAvailableResourcesAsync();
+        Assert.True(availableResources.Count >= _resourcePoolService.MinimumResources, "Available resources should not be below the threshold after allocation.");
+    }
 }
