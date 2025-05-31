@@ -133,3 +133,4 @@ $RECYCLE.BIN/
 
 # Others
 *.DS_Store
+__azurite_db_*
