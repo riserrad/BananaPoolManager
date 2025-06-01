@@ -115,4 +115,28 @@ public class ResourcePoolService
 
         return allocatedResource;
     }
+
+    public async Task DeleteResourceAsync(string rowKey)
+    {
+        try
+        {
+            await _tableClient.DeleteEntityAsync("ResourcePool", rowKey);
+        }
+        catch (RequestFailedException ex) when (ex.Status == 404)
+        {
+        }        
+    }
+
+    public async Task<object?> GetResourceAsync(string rowKey)
+    {
+        try
+        {
+            var resource = await _tableClient.GetEntityAsync<ResourceEntity>("ResourcePool", rowKey);
+            return resource.Value;
+        }
+        catch (RequestFailedException ex) when (ex.Status == 404)
+        {
+            return null; // Resource not found
+        }
+    }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolLocker", "BananaP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolLocker.Tests", "BananaPoolLocker.Tests\BananaPoolLocker.Tests.csproj", "{0C0B0983-6CEF-4D8E-9740-0602050B1F6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolLocker.ConsoleApp", "BananaPoolLocker.ConsoleApp\BananaPoolLocker.ConsoleApp.csproj", "{B354B298-2617-4258-A191-BB11005C47A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{0C0B0983-6CEF-4D8E-9740-0602050B1F6F}.Release|x64.Build.0 = Release|Any CPU
 		{0C0B0983-6CEF-4D8E-9740-0602050B1F6F}.Release|x86.ActiveCfg = Release|Any CPU
 		{0C0B0983-6CEF-4D8E-9740-0602050B1F6F}.Release|x86.Build.0 = Release|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Debug|x64.Build.0 = Debug|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Release|x64.ActiveCfg = Release|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Release|x64.Build.0 = Release|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{B354B298-2617-4258-A191-BB11005C47A2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

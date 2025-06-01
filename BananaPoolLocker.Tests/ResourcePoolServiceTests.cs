@@ -90,4 +90,26 @@ public class ResourcePoolServiceTests
         // Ensure all allocated resources are unique
         Assert.Equal(results.Distinct().Count(), results.Length);
     }
+
+    [Fact]
+    public async Task Should_Delete_Resource()
+    {
+        var resource = new ResourceEntity();
+        await _resourcePoolService.AddResourceAsync(resource);
+
+        await _resourcePoolService.DeleteResourceAsync(resource.RowKey);
+
+        var deletedResource = await _resourcePoolService.GetResourceAsync(resource.RowKey);
+        Assert.Null(deletedResource);
+    }
+
+    [Fact]
+    public async Task Should_Silently_Fail_If_Deleting_NonExistent_Resource()
+    {
+        // Attempt to delete a resource that does not exist
+        await _resourcePoolService.DeleteResourceAsync("non-existent-row-key");
+
+        // No exception should be thrown, and the method should complete successfully
+        Assert.True(true);
+    }
 }
