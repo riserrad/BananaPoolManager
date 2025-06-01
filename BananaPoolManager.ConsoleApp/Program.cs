@@ -7,7 +7,10 @@ const string TableName = "ResourcePoolConsoleTable";
 var resourcePoolService = new ResourcePoolService(ConnectionString, TableName);
 bool running = true;
 
-Console.WriteLine("Banana Pool Manager App");
+Console.WriteLine("##############################################");
+Console.WriteLine("### Welcome to the Banana Pool Manager App ###");
+Console.WriteLine("##############################################");
+Console.WriteLine("");
 // Console.WriteLine("Commands: list | allocate [count] | delete <rowKey> | refill | exit");
 HelpCommand();
 
