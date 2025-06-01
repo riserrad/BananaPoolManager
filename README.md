@@ -10,11 +10,9 @@ Currently, I am using Azure Tables as storage for this project.
 
 ## Upcoming Features
 
-- **Distributed Hosts:** Enable distributed pools by connecting multiple hosts.
-- **Extensible Architecture:** Designed to support plugins and custom integrations.
-- **Custom Strategies:** Plug in custom refilling and assignment strategies.
+- **Distributed Hosts:** Scale with distributed pools by adding multiple hosts.
+- **Extensible Architecture:** Improved design will support pluggable allocation and refilling strategies.
 - **Automated Alerts:** Receive notifications when resources are low or abnormal activity is detected.
-- **Advanced Alerting:** Enhanced alerting for hosts running out of capacity.
 
 ## Requirements
 
