@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolLocker", "BananaPoolLocker\BananaPoolLocker.csproj", "{29DAD085-1E79-45EC-811A-1F2593D36F1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolManager", "BananaPoolManager\BananaPoolManager.csproj", "{29DAD085-1E79-45EC-811A-1F2593D36F1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolLocker.Tests", "BananaPoolLocker.Tests\BananaPoolLocker.Tests.csproj", "{0C0B0983-6CEF-4D8E-9740-0602050B1F6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolManager.Tests", "BananaPoolManager.Tests\BananaPoolManager.Tests.csproj", "{0C0B0983-6CEF-4D8E-9740-0602050B1F6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolLocker.ConsoleApp", "BananaPoolLocker.ConsoleApp\BananaPoolLocker.ConsoleApp.csproj", "{B354B298-2617-4258-A191-BB11005C47A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BananaPoolManager.ConsoleApp", "BananaPoolManager.ConsoleApp\BananaPoolManager.ConsoleApp.csproj", "{B354B298-2617-4258-A191-BB11005C47A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
-﻿using BananaPoolLocker.Models;
-using BananaPoolLocker.Services;
+﻿using BananaPoolManager.Models;
+using BananaPoolManager.Services;
 
-namespace BananaPoolLocker.Tests;
+namespace BananaPoolManager.Tests;
 
 public class ResourcePoolServiceTests
 {

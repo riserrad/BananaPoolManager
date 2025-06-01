@@ -1,6 +1,6 @@
 using System;
 
-namespace BananaPoolLocker.Models;
+namespace BananaPoolManager.Models;
 
 public enum ResourceEntityState
 {

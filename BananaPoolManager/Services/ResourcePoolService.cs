@@ -1,9 +1,9 @@
 using System;
 using Azure;
 using Azure.Data.Tables;
-using BananaPoolLocker.Models;
+using BananaPoolManager.Models;
 
-namespace BananaPoolLocker.Services;
+namespace BananaPoolManager.Services;
 
 public class ResourcePoolService
 {

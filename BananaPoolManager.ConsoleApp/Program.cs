@@ -1,5 +1,5 @@
-﻿using BananaPoolLocker.Models;
-using BananaPoolLocker.Services;
+﻿using BananaPoolManager.Models;
+using BananaPoolManager.Services;
 
 const string ConnectionString = "UseDevelopmentStorage=true";
 const string TableName = "ResourcePoolConsoleTable";

@@ -2,7 +2,7 @@ using System;
 using Azure;
 using Azure.Data.Tables;
 
-namespace BananaPoolLocker.Models;
+namespace BananaPoolManager.Models;
 
 public class ResourceEntity : ITableEntity
 {
