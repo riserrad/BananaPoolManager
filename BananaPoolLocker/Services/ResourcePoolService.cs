@@ -95,4 +95,24 @@ public class ResourcePoolService
         }
         return list;
     }
+
+    public async Task<ResourceEntity> AllocateRandomResourceAsync()
+    {
+        ResourceEntity? allocatedResource = null;
+
+        while (allocatedResource == null)
+        {
+            var availableResources = await GetAvailableResourcesAsync();
+            if (availableResources.Count == 0)
+            {
+                throw new InvalidOperationException("No available resources to allocate.");
+            }
+
+            // Randomly select an index from the available resources
+            var randomIndex = new Random().Next(availableResources.Count);
+            allocatedResource = await TryAcquireResourceAsync(availableResources[randomIndex].RowKey);
+        }
+
+        return allocatedResource;
+    }
 }

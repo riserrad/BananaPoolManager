@@ -73,4 +73,21 @@ public class ResourcePoolServiceTests
         availableResources = await _resourcePoolService.GetAvailableResourcesAsync();
         Assert.True(availableResources.Count >= _resourcePoolService.MinimumResources, "Available resources should not be below the threshold after allocation.");
     }
+
+    [Fact]
+    public async Task Should_Assign_Random_Resource()
+    {
+        var resource = await _resourcePoolService.AllocateRandomResourceAsync();
+        Assert.NotNull(resource);
+    }
+
+    [Fact]
+    public async Task Should_Allocate_Unique_Resources_For_Concurrent_Requests()
+    {
+        var tasks = Enumerable.Range(0, 10).Select(_ => _resourcePoolService.AllocateRandomResourceAsync()).ToArray();
+        var results = await Task.WhenAll(tasks);
+
+        // Ensure all allocated resources are unique
+        Assert.Equal(results.Distinct().Count(), results.Length);
+    }
 }
